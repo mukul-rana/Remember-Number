@@ -1,14 +1,14 @@
 
 body{
     text-align: center;
+    background-color: rgba(4, 68, 94, 0.829);
 }
 h1{
-    color: red;
+    color:blue;
     font-size: 70px;;
     
 }
 #input{
-    
     height: 50px;
     width: 270px;
     font-size: 25px;
@@ -35,6 +35,8 @@ button{
     margin: 25px;
     height: 45px;
     width: 100px;
+    background-color: cyan;
+    
 }
 #score{
     font-size: 25px;
@@ -44,5 +46,7 @@ button{
     width: 200px;
     display: inline-block;
 }
+
+
 
 

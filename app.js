@@ -18,6 +18,7 @@ document.getElementById('start').onclick = function(){
         document.getElementById('display').innerHTML = num;
         window.setTimeout( function(){
         document.getElementById('display').innerHTML = "";},displayPeriod);
+        
 
         
     }
@@ -29,13 +30,14 @@ document.getElementById('start').onclick = function(){
 }
 
 $(document).keyup(function(e){  
+    
     var userNum = document.getElementById('input').value;
     if(String(userNum).length == String(num).length){
         userNum = String(userNum);
         var tempScore =0;
         
         if( userNum === num){
-            tempScore++;
+            tempScore+=level;
             levelIncrement++;
             if(levelIncrement===3){
                 level++;
@@ -43,7 +45,12 @@ $(document).keyup(function(e){
             }
         }
         else {
-            tempScore--;
+            
+            for(var i=0;i<userNum.length;i++)
+              if(userNum.substring(i,i+1)!=num.substring(i,i+1))
+                  tempScore--;
+              else 
+                  tempScore++;
             levelIncrement--;
             if(levelIncrement<0 && level>4){
 
@@ -59,7 +66,7 @@ $(document).keyup(function(e){
         window.setTimeout( function(){
             document.getElementById('display').innerHTML = "";},displayPeriod);
         document.getElementById('score').innerHTML = "Score : " + score;
+        
+        
     }
 });
-
-
