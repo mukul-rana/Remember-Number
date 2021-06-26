@@ -15,11 +15,16 @@ h1{
     text-align: center;
     
 }
+
+/* To remove scroll around number input */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+
+
 #display{
     height: 60px;
     width: 270px;
@@ -39,3 +44,5 @@ button{
     width: 200px;
     display: inline-block;
 }
+
+
