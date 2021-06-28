@@ -1,10 +1,10 @@
 
 body{
     text-align: center;
-    background-color: rgba(4, 68, 94, 0.829);
+    background-color: rgba(255, 179, 38, 0.829);
 }
 h1{
-    color:blue;
+    color:rgb(252, 39, 24);
     font-size: 70px;;
     
 }
@@ -25,12 +25,7 @@ input::-webkit-inner-spin-button {
 
 
 
-#display{
-    height: 60px;
-    width: 270px;
-    font-size: 25px;
-    display: inline-block;
-}   
+
 button{
     margin: 25px;
     height: 45px;
