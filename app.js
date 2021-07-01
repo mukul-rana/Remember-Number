@@ -4,24 +4,30 @@ var num;
 var displayPeriod;
 var levelIncrement;
 
-
+var flag;
 
 document.getElementById('start').onclick = function(){
     if(document.getElementById('start').innerHTML == 'Start'){
         document.getElementById('start').innerHTML = 'Stop';
         level = 4;
-        displayPeriod = 1000;
+        displayPeriod = 900;
         levelIncrement=0;
         score=0;  
         document.getElementById('score').innerHTML = "Score : " + score;
+
         num =  String(Math.random()).substring(2,2+level) ;
 
+        
         document.getElementById('input').value = num;
         document.getElementById("input").disabled = true;
+        flag =0;
+
+
         window.setTimeout( function(){
         document.getElementById('input').value = "";
         document.getElementById("input").disabled = false;
         document.getElementById("input").focus();
+        flag=1;
         },displayPeriod);
         
 
@@ -34,7 +40,12 @@ document.getElementById('start').onclick = function(){
     }
 }
 
+
 $(document).keyup(function(e){  
+    
+    if(flag == 0) 
+        return;
+    
     
     var userNum = document.getElementById('input').value;
     if(String(userNum).length >= String(num).length){
@@ -76,15 +87,19 @@ $(document).keyup(function(e){
         window.setTimeout( function(){
             document.getElementById('input').value = num;
             document.getElementById("input").disabled = true;
+            flag=0;
 
         window.setTimeout( function(){
             document.getElementById('input').value = "";
             document.getElementById("input").disabled = false;
+            flag=1;
             document.getElementById('input').focus();
         },displayPeriod);
+
+        
         document.getElementById('score').innerHTML = "Score : " + score;
 
-        },500);
+        },400);
         
 
         
